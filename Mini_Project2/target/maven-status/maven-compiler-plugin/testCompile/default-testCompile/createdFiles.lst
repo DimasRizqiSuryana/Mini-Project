@@ -1,0 +1,17 @@
+starter\user\GET_Product.class
+starter\user\POST_Register.class
+starter\user\DELETE_Category.class
+starter\stepdefinition\User_Category_steps.class
+starter\stepdefinition\User_Register_steps.class
+starter\user\GET_CategoryAll.class
+starter\user\POST_Category.class
+starter\user\POST_Rating.class
+starter\user\GET_Commant.class
+starter\user\DELETE_Product.class
+starter\stepdefinition\User_RatingandComment_steps.class
+starter\CucumberTestSuite.class
+starter\user\POST_Product.class
+starter\user\GET_Category.class
+starter\user\GET_Rating.class
+starter\user\POST_Commant.class
+starter\stepdefinition\User_produuct_steps.class

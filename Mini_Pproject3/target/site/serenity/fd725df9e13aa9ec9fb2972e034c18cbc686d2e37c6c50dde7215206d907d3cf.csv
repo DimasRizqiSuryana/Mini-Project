@@ -1,0 +1,5 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Register","As a user i want to register account with valid data","IGNORED","2023-06-09T18:48:46.0975636+07:00[Asia/Jakarta]","0.0","2.11"
+"Register","As a user i want to register account with invalid fullname","IGNORED","2023-06-09T18:48:48.2193512+07:00[Asia/Jakarta]","0.0","2.1"
+"Register","As a user i want to register account with invalid password","IGNORED","2023-06-09T18:48:50.3254566+07:00[Asia/Jakarta]","0.0","2.11"
+"Register","As a user i want to register account without using email","IGNORED","2023-06-09T18:48:52.4417654+07:00[Asia/Jakarta]","0.0","2.11"

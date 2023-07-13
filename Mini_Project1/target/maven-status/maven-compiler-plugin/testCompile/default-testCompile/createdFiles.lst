@@ -1,0 +1,16 @@
+starter\Stepdefintion\Transactionsteps.class
+starter\Stepdefintion\Registersteps.class
+starter\Stepdefintion\Cartsteps.class
+starter\Pages\Registerpages.class
+starter\Stepdefintion\Paymentsteps.class
+starter\Pages\Homepages.class
+starter\Pages\PaymentPage.class
+starter\Pages\Loginpages.class
+starter\Pages\Logoutpages.class
+starter\CucumberTestSuite.class
+starter\Pages\Transactionpages.class
+starter\Stepdefintion\Loginsteps.class
+starter\Stepdefintion\Logoutsteps.class
+starter\Stepdefintion\Chooseproductsteps.class
+starter\Pages\Cartpages.class
+starter\Pages\Chooseproductpages.class

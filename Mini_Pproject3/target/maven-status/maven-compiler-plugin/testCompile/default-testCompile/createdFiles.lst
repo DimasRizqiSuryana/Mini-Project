@@ -1,0 +1,9 @@
+test\automation\stepdefinitons\ProduckListSteps.class
+test\automation\pages\LoginScreen.class
+test\automation\hooks\BaseDriverHooks.class
+CucumberTestSuite.class
+test\automation\pages\RegisterScreen.class
+test\automation\stepdefinitons\LoginSteps.class
+test\automation\pages\ProductListScreen.class
+test\automation\stepdefinitons\RegisterSteps.class
+test\automation\stepdefinitons\LogoutSteps.class

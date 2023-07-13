@@ -1,0 +1,6 @@
+test\automation\pageobject\BasePageObject.class
+test\automation\driver\DriverPool.class
+test\automation\driver\AndroidDriverPool.class
+test\automation\properties\ConfigProperties.class
+test\automation\properties\DriverAndroidProperties.class
+test\automation\pageobject\AndroidPageObjejct.class

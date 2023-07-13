@@ -1,0 +1,125 @@
+-------------------------------------------------------------------------------
+Test set: CucumberTestSuite
+-------------------------------------------------------------------------------
+Tests run: 94, Failures: 0, Errors: 22, Skipped: 72, Time elapsed: 40.793 sec <<< FAILURE! - in CucumberTestSuite
+As a user i want to login form my account  Time elapsed: 0.002 sec  <<< ERROR!
+org.openqa.selenium.WebDriverException: 
+Connection refused: no further information
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'LAPTOP-DBIGS1G3', ip: '192.168.100.6', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2.1'
+Driver info: driver.version: AndroidDriver
+Caused by: java.net.ConnectException: Connection refused: no further information
+
+As a user i want to login form my account  Time elapsed: 0.002 sec  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)" because "screenshot" is null
+
+As a user i want to login with wrong password  Time elapsed: 0.011 sec  <<< ERROR!
+org.openqa.selenium.WebDriverException: 
+Connection refused: no further information
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'LAPTOP-DBIGS1G3', ip: '192.168.100.6', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2.1'
+Driver info: driver.version: AndroidDriver
+Caused by: java.net.ConnectException: Connection refused: no further information
+
+As a user i want to login with wrong password  Time elapsed: 0.011 sec  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)" because "screenshot" is null
+
+As a user i want to login with wrong email  Time elapsed: 0.007 sec  <<< ERROR!
+org.openqa.selenium.WebDriverException: 
+Connection refused: no further information
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'LAPTOP-DBIGS1G3', ip: '192.168.100.6', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2.1'
+Driver info: driver.version: AndroidDriver
+Caused by: java.net.ConnectException: Connection refused: no further information
+
+As a user i want to login with wrong email  Time elapsed: 0.008 sec  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)" because "screenshot" is null
+
+As a user i want to login with invalid email  Time elapsed: 0.003 sec  <<< ERROR!
+org.openqa.selenium.WebDriverException: 
+Connection refused: no further information
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'LAPTOP-DBIGS1G3', ip: '192.168.100.6', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2.1'
+Driver info: driver.version: AndroidDriver
+Caused by: java.net.ConnectException: Connection refused: no further information
+
+As a user i want to login with invalid email  Time elapsed: 0.003 sec  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)" because "screenshot" is null
+
+As a user i want to login without input password  Time elapsed: 0.008 sec  <<< ERROR!
+org.openqa.selenium.WebDriverException: 
+Connection refused: no further information
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'LAPTOP-DBIGS1G3', ip: '192.168.100.6', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2.1'
+Driver info: driver.version: AndroidDriver
+Caused by: java.net.ConnectException: Connection refused: no further information
+
+As a user i want to login without input password  Time elapsed: 0.009 sec  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)" because "screenshot" is null
+
+As a user i want to logout form my account  Time elapsed: 0.004 sec  <<< ERROR!
+org.openqa.selenium.WebDriverException: 
+Connection refused: no further information
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'LAPTOP-DBIGS1G3', ip: '192.168.100.6', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2.1'
+Driver info: driver.version: AndroidDriver
+Caused by: java.net.ConnectException: Connection refused: no further information
+
+As a user i want to logout form my account  Time elapsed: 0.004 sec  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)" because "screenshot" is null
+
+As a user i want to add product to cart  Time elapsed: 0.007 sec  <<< ERROR!
+org.openqa.selenium.WebDriverException: 
+Connection refused: no further information
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'LAPTOP-DBIGS1G3', ip: '192.168.100.6', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2.1'
+Driver info: driver.version: AndroidDriver
+Caused by: java.net.ConnectException: Connection refused: no further information
+
+As a user i want to add product to cart  Time elapsed: 0.007 sec  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)" because "screenshot" is null
+
+As a user i want to register account with valid data  Time elapsed: 0.011 sec  <<< ERROR!
+org.openqa.selenium.WebDriverException: 
+Connection refused: no further information
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'LAPTOP-DBIGS1G3', ip: '192.168.100.6', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2.1'
+Driver info: driver.version: AndroidDriver
+Caused by: java.net.ConnectException: Connection refused: no further information
+
+As a user i want to register account with valid data  Time elapsed: 0.012 sec  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)" because "screenshot" is null
+
+As a user i want to register account with invalid fullname  Time elapsed: 0.005 sec  <<< ERROR!
+org.openqa.selenium.WebDriverException: 
+Connection refused: no further information
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'LAPTOP-DBIGS1G3', ip: '192.168.100.6', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2.1'
+Driver info: driver.version: AndroidDriver
+Caused by: java.net.ConnectException: Connection refused: no further information
+
+As a user i want to register account with invalid fullname  Time elapsed: 0.005 sec  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)" because "screenshot" is null
+
+As a user i want to register account with invalid password  Time elapsed: 0.001 sec  <<< ERROR!
+org.openqa.selenium.WebDriverException: 
+Connection refused: no further information
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'LAPTOP-DBIGS1G3', ip: '192.168.100.6', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2.1'
+Driver info: driver.version: AndroidDriver
+Caused by: java.net.ConnectException: Connection refused: no further information
+
+As a user i want to register account with invalid password  Time elapsed: 0.001 sec  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)" because "screenshot" is null
+
+As a user i want to register account without using email  Time elapsed: 0 sec  <<< ERROR!
+org.openqa.selenium.WebDriverException: 
+Connection refused: no further information
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'LAPTOP-DBIGS1G3', ip: '192.168.100.6', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2.1'
+Driver info: driver.version: AndroidDriver
+Caused by: java.net.ConnectException: Connection refused: no further information
+
+As a user i want to register account without using email  Time elapsed: 0 sec  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)" because "screenshot" is null
+

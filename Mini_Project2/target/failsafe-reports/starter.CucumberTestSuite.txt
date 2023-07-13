@@ -1,0 +1,38 @@
+-------------------------------------------------------------------------------
+Test set: starter.CucumberTestSuite
+-------------------------------------------------------------------------------
+Tests run: 24, Failures: 5, Errors: 0, Skipped: 0, Time elapsed: 21.595 s <<< FAILURE! - in starter.CucumberTestSuite
+Posts #1.POST - As an admin I have be able to create new category posts  Time elapsed: 8.848 s  <<< FAILURE!
+java.lang.AssertionError: 
+1 expectation failed.
+JSON path data.id doesn't match.
+Expected: <13946>
+  Actual: null
+
+
+Posts #1.GET - As an admin I have be able to see posts category number 1  Time elapsed: 0.175 s  <<< FAILURE!
+java.lang.AssertionError: 
+1 expectation failed.
+Expected status code <200> but was <404>.
+
+
+Posts #2.POST - As an admin I have be able to create new posts rating  Time elapsed: 0.15 s  <<< FAILURE!
+java.lang.AssertionError: 
+1 expectation failed.
+Expected status code <200> but was <500>.
+
+
+Posts #2.GET - As an admin I have be able to see posts rating number 1  Time elapsed: 0.135 s  <<< FAILURE!
+java.lang.AssertionError: 
+1 expectation failed.
+JSON path data doesn't match.
+Expected: <2>
+  Actual: <1>
+
+
+Posts #3.POST - As an admin I have be able to create new user account  Time elapsed: 0.019 s  <<< FAILURE!
+java.lang.AssertionError: 
+1 expectation failed.
+Expected status code <200> but was <404>.
+
+

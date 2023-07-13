@@ -1,0 +1,6 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Posts","POST - As an admin I have be able to create new category posts","FAILURE","2023-05-31T10:14:49.6089555+07:00[Asia/Jakarta]","0.0","7.85"
+"Posts","GET - As an admin I have be able to see posts category number 1","FAILURE","2023-05-31T10:14:57.7526186+07:00[Asia/Jakarta]","0.0","0.15"
+"Posts","POST - As an admin I have be able to create new posts rating","FAILURE","2023-05-31T10:14:58.6484819+07:00[Asia/Jakarta]","0.0","0.14"
+"Posts","GET - As an admin I have be able to see posts rating number 1","FAILURE","2023-05-31T10:14:58.9164607+07:00[Asia/Jakarta]","0.0","0.13"
+"Posts","POST - As an admin I have be able to create new user account","FAILURE","2023-05-31T10:14:59.6177717+07:00[Asia/Jakarta]","0.0","0.01"

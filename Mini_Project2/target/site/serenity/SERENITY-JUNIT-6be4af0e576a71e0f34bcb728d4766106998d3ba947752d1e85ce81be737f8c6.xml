@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="5" name="Posts" skipped="0" tests="24" time="10.78" timestamp="2023-05-31 10:14:49"><testcase name="POST - As an admin I have be able to create new category posts"><failure message="1 expectation failed.&#10;JSON path data.id doesn't match.&#10;Expected: &lt;13946&gt;&#10;  Actual: null&#10;" type="java.lang.AssertionError">1 expectation failed.
+JSON path data.id doesn't match.
+Expected: &lt;13946&gt;
+  Actual: null
+</failure><system-err>1 expectation failed.
+JSON path data.id doesn't match.
+Expected: &lt;13946&gt;
+  Actual: null
+&#13;
+io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:696)&#13;
+io.restassured.internal.ResponseSpecificationImpl.this$2$validateResponseIfRequired(ResponseSpecificationImpl.groovy)&#13;
+io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:270)&#13;
+io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:117)&#13;
+io.restassured.internal.ValidatableResponseOptionsImpl.body(ValidatableResponseOptionsImpl.java:244)&#13;
+minpro@1.0-SNAPSHOT/starter.user.POST_Category.lambda$validateDataNewCategoryPost$0(POST_Category.java:32)&#13;
+net.serenitybdd.rest.SerenityRest.restAssuredThat(SerenityRest.java:626)&#13;
+minpro@1.0-SNAPSHOT/starter.user.POST_Category.validateDataNewCategoryPost(POST_Category.java:32)&#13;
+minpro@1.0-SNAPSHOT/starter.stepdefinition.User_Category_steps.reciveValidDataNewCategoryPost(User_Category_steps.java:41)&#13;
+io.cucumber.java.Invoker.doInvoke(Invoker.java:66)&#13;
+io.cucumber.java.Invoker.invoke(Invoker.java:24)&#13;
+io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)&#13;
+io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)&#13;
+io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)&#13;
+io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)&#13;
+io.cucumber.core.runner.TestStep.executeStep(TestStep.java:84)&#13;
+io.cucumber.core.runner.TestStep.run(TestStep.java:56)&#13;
+io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)&#13;
+io.cucumber.core.runner.TestCase.run(TestCase.java:84)&#13;
+io.cucumber.core.runner.Runner.runPickle(Runner.java:75)&#13;
+io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:130)&#13;
+io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)&#13;
+io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:130)&#13;
+io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:144)&#13;
+io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:28)&#13;
+io.cucumber.junit.FeatureRunner.run(FeatureRunner.java:137)&#13;
+io.cucumber.junit.CucumberSerenityBaseRunner.runChild(CucumberSerenityBaseRunner.java:330)&#13;
+io.cucumber.junit.CucumberSerenityBaseRunner.runChild(CucumberSerenityBaseRunner.java:51)&#13;
+</system-err></testcase><testcase name="POST - As an admin I shouldn't be able to create new category posts with invalid url"/><testcase name="GET - As an admin I have be able to see posts category number 1"><failure message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;404&gt;.&#10;" type="java.lang.AssertionError">1 expectation failed.
+Expected status code &lt;200&gt; but was &lt;404&gt;.
+</failure><system-err>1 expectation failed.
+Expected status code &lt;200&gt; but was &lt;404&gt;.
+&#13;
+io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:696)&#13;
+io.restassured.internal.ResponseSpecificationImpl.this$2$validateResponseIfRequired(ResponseSpecificationImpl.groovy)&#13;
+io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:135)&#13;
+io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:143)&#13;
+io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)&#13;
+minpro@1.0-SNAPSHOT/starter.user.GET_Product.lambda$validateHttpResponse200$0(GET_Product.java:27)&#13;
+net.serenitybdd.rest.SerenityRest.restAssuredThat(SerenityRest.java:626)&#13;
+minpro@1.0-SNAPSHOT/starter.user.GET_Product.validateHttpResponse200(GET_Product.java:27)&#13;
+minpro@1.0-SNAPSHOT/starter.stepdefinition.User_produuct_steps.reciveValidHttpResponse(User_produuct_steps.java:37)&#13;
+io.cucumber.java.Invoker.doInvoke(Invoker.java:66)&#13;
+io.cucumber.java.Invoker.invoke(Invoker.java:24)&#13;
+io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)&#13;
+io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)&#13;
+io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)&#13;
+io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)&#13;
+io.cucumber.core.runner.TestStep.executeStep(TestStep.java:84)&#13;
+io.cucumber.core.runner.TestStep.run(TestStep.java:56)&#13;
+io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)&#13;
+io.cucumber.core.runner.TestCase.run(TestCase.java:84)&#13;
+io.cucumber.core.runner.Runner.runPickle(Runner.java:75)&#13;
+io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:130)&#13;
+io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)&#13;
+io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:130)&#13;
+io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:144)&#13;
+io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:28)&#13;
+io.cucumber.junit.FeatureRunner.run(FeatureRunner.java:137)&#13;
+io.cucumber.junit.CucumberSerenityBaseRunner.runChild(CucumberSerenityBaseRunner.java:330)&#13;
+io.cucumber.junit.CucumberSerenityBaseRunner.runChild(CucumberSerenityBaseRunner.java:51)&#13;
+</system-err></testcase><testcase name="GET - As an admin I shouldn't be able to see posts with invalid url"/><testcase name="GET - As an admin I have be able to see posts all category number 1"/><testcase name="GET - As an admin I shouldn't be able to see all  posts with invalid url"/><testcase name="DELETE - As admin I have be able to delete category existing posts"/><testcase name="DELETE - As admin I shouldn't be able to delete without input which posts"/><testcase name="POST - As an admin I have be able to create new posts rating"><failure message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;500&gt;.&#10;" type="java.lang.AssertionError">1 expectation failed.
+Expected status code &lt;200&gt; but was &lt;500&gt;.
+</failure><system-err>1 expectation failed.
+Expected status code &lt;200&gt; but was &lt;500&gt;.
+&#13;
+io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:696)&#13;
+io.restassured.internal.ResponseSpecificationImpl.this$2$validateResponseIfRequired(ResponseSpecificationImpl.groovy)&#13;
+io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:135)&#13;
+io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:143)&#13;
+io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)&#13;
+minpro@1.0-SNAPSHOT/starter.user.POST_Product.lambda$reciveValidHttpResponse201$0(POST_Product.java:33)&#13;
+net.serenitybdd.rest.SerenityRest.restAssuredThat(SerenityRest.java:626)&#13;
+minpro@1.0-SNAPSHOT/starter.user.POST_Product.reciveValidHttpResponse201(POST_Product.java:33)&#13;
+minpro@1.0-SNAPSHOT/starter.stepdefinition.User_produuct_steps.reciveValidHttp201(User_produuct_steps.java:78)&#13;
+io.cucumber.java.Invoker.doInvoke(Invoker.java:66)&#13;
+io.cucumber.java.Invoker.invoke(Invoker.java:24)&#13;
+io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)&#13;
+io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)&#13;
+io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)&#13;
+io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)&#13;
+io.cucumber.core.runner.TestStep.executeStep(TestStep.java:84)&#13;
+io.cucumber.core.runner.TestStep.run(TestStep.java:56)&#13;
+io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)&#13;
+io.cucumber.core.runner.TestCase.run(TestCase.java:84)&#13;
+io.cucumber.core.runner.Runner.runPickle(Runner.java:75)&#13;
+io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:130)&#13;
+io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)&#13;
+io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:130)&#13;
+io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:144)&#13;
+io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:28)&#13;
+io.cucumber.junit.FeatureRunner.run(FeatureRunner.java:137)&#13;
+io.cucumber.junit.CucumberSerenityBaseRunner.runChild(CucumberSerenityBaseRunner.java:330)&#13;
+io.cucumber.junit.CucumberSerenityBaseRunner.runChild(CucumberSerenityBaseRunner.java:51)&#13;
+</system-err></testcase><testcase name="POST - As an admin I shouldn't be able to create new posts rating with invalid url"/><testcase name="GET - As an admin I have be able to see posts rating number 1"><failure message="1 expectation failed.&#10;JSON path data doesn't match.&#10;Expected: &lt;2&gt;&#10;  Actual: &lt;1&gt;&#10;" type="java.lang.AssertionError">1 expectation failed.
+JSON path data doesn't match.
+Expected: &lt;2&gt;
+  Actual: &lt;1&gt;
+</failure><system-err>1 expectation failed.
+JSON path data doesn't match.
+Expected: &lt;2&gt;
+  Actual: &lt;1&gt;
+&#13;
+io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:696)&#13;
+io.restassured.internal.ResponseSpecificationImpl.this$2$validateResponseIfRequired(ResponseSpecificationImpl.groovy)&#13;
+io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:270)&#13;
+io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:117)&#13;
+io.restassured.internal.ValidatableResponseOptionsImpl.body(ValidatableResponseOptionsImpl.java:244)&#13;
+minpro@1.0-SNAPSHOT/starter.user.GET_Rating.lambda$validateDataGetRating$0(GET_Rating.java:27)&#13;
+net.serenitybdd.rest.SerenityRest.restAssuredThat(SerenityRest.java:626)&#13;
+minpro@1.0-SNAPSHOT/starter.user.GET_Rating.validateDataGetRating(GET_Rating.java:27)&#13;
+minpro@1.0-SNAPSHOT/starter.stepdefinition.User_RatingandComment_steps.reciveDataGetRating(User_RatingandComment_steps.java:63)&#13;
+io.cucumber.java.Invoker.doInvoke(Invoker.java:66)&#13;
+io.cucumber.java.Invoker.invoke(Invoker.java:24)&#13;
+io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)&#13;
+io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)&#13;
+io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)&#13;
+io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)&#13;
+io.cucumber.core.runner.TestStep.executeStep(TestStep.java:84)&#13;
+io.cucumber.core.runner.TestStep.run(TestStep.java:56)&#13;
+io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)&#13;
+io.cucumber.core.runner.TestCase.run(TestCase.java:84)&#13;
+io.cucumber.core.runner.Runner.runPickle(Runner.java:75)&#13;
+io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:130)&#13;
+io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)&#13;
+io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:130)&#13;
+io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:144)&#13;
+io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:28)&#13;
+io.cucumber.junit.FeatureRunner.run(FeatureRunner.java:137)&#13;
+io.cucumber.junit.CucumberSerenityBaseRunner.runChild(CucumberSerenityBaseRunner.java:330)&#13;
+io.cucumber.junit.CucumberSerenityBaseRunner.runChild(CucumberSerenityBaseRunner.java:51)&#13;
+</system-err></testcase><testcase name="GET - As an admin I shouldn't be able to see posts rating with invalid url"/><testcase name="POST - As an admin I have be able to create new posts comment"/><testcase name="POST - As an admin I shouldn't be able to create new posts commant with invalid url"/><testcase name="GET - As an admin I have be able to see commant posts number 1"/><testcase name="GET - As an admin I shouldn't be able to see commant posts with invalid url"/><testcase name="POST - As an admin I have be able to create new user account"><failure message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;404&gt;.&#10;" type="java.lang.AssertionError">1 expectation failed.
+Expected status code &lt;200&gt; but was &lt;404&gt;.
+</failure><system-err>1 expectation failed.
+Expected status code &lt;200&gt; but was &lt;404&gt;.
+&#13;
+io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:696)&#13;
+io.restassured.internal.ResponseSpecificationImpl.this$2$validateResponseIfRequired(ResponseSpecificationImpl.groovy)&#13;
+io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:135)&#13;
+io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:143)&#13;
+io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)&#13;
+minpro@1.0-SNAPSHOT/starter.user.POST_Product.lambda$reciveValidHttpResponse201$0(POST_Product.java:33)&#13;
+net.serenitybdd.rest.SerenityRest.restAssuredThat(SerenityRest.java:626)&#13;
+minpro@1.0-SNAPSHOT/starter.user.POST_Product.reciveValidHttpResponse201(POST_Product.java:33)&#13;
+minpro@1.0-SNAPSHOT/starter.stepdefinition.User_produuct_steps.reciveValidHttp201(User_produuct_steps.java:78)&#13;
+io.cucumber.java.Invoker.doInvoke(Invoker.java:66)&#13;
+io.cucumber.java.Invoker.invoke(Invoker.java:24)&#13;
+io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)&#13;
+io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)&#13;
+io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)&#13;
+io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)&#13;
+io.cucumber.core.runner.TestStep.executeStep(TestStep.java:84)&#13;
+io.cucumber.core.runner.TestStep.run(TestStep.java:56)&#13;
+io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)&#13;
+io.cucumber.core.runner.TestCase.run(TestCase.java:84)&#13;
+io.cucumber.core.runner.Runner.runPickle(Runner.java:75)&#13;
+io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:130)&#13;
+io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)&#13;
+io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:130)&#13;
+io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:144)&#13;
+io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:28)&#13;
+io.cucumber.junit.FeatureRunner.run(FeatureRunner.java:137)&#13;
+io.cucumber.junit.CucumberSerenityBaseRunner.runChild(CucumberSerenityBaseRunner.java:330)&#13;
+io.cucumber.junit.CucumberSerenityBaseRunner.runChild(CucumberSerenityBaseRunner.java:51)&#13;
+</system-err></testcase><testcase name="POST - As an admin I shouldn't be able to create new user account posts with invalid url"/><testcase name="GET - As an admin I have be able to see posts number 1"/><testcase name="GET - As an admin I shouldn't be able to see posts with invalid url"/><testcase name="POST - As an admin I have be able to create new posts"/><testcase name="POST - As an admin I shouldn't be able to create new posts with invalid url"/><testcase name="DELETE - As admin I have be able to delete existing posts"/><testcase name="DELETE - As admin I shouldn't be able to delete without input which posts"/></testsuite>

@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>Features</title>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="bootstrap-icons/font/bootstrap-icons.css"><!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><link rel="stylesheet" type="text/css" href="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.css">
+<link rel="stylesheet" type="text/css" href="chartist/dist/chartist.min.css">
+<script src="chartist/dist/chartist.min.js"></script>
+<script src="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script>
+<!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.20/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.20/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.10.20/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.20/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.20/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/><!-- JQuery-UI -->
+<link type="text/css" href="jqueryui/1.11.2-start/jquery-ui.min.css" rel="Stylesheet" />
+<script type="text/javascript" src="jqueryui/1.11.2-start/jquery-ui.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.20/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.20/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.10.20/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.20/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.20/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+
+
+
+    <script>
+
+        $(document).ready(function () {
+
+            var scenarioTable = $('.scenario-result-table').DataTable({
+
+                "order": [],
+                "language": {
+                    searchPlaceholder: "Filter",
+                    search: ""
+                }
+            });
+
+            $('.example-table table').DataTable({
+                searching: false,
+                ordering: false,
+                paging: false,
+                info: false
+            });
+
+            $('.example-table-in-scenario table').DataTable({
+                searching: false,
+                ordering: false,
+                paging: false,
+                info: false
+            });
+
+            $('#evidence-table').DataTable(
+                {
+                    searching: false,
+                    ordering: false,
+                    paging: false,
+                    info: false
+                }
+            );
+
+
+            $(".scenario-docs .card-body table").wrap("<div class='table-responsive'></div>");
+
+            $("#requirements-tabs").tabs();
+            $("#test-tabs").tabs();
+
+            var requirementsTree = [{"text":"Login, As a user I want to login,So that i can access homepage","type":"feature","href":"41090f33512975c7aa81bcd1fecc36c09efc9bd26e4e4824f8be8ed42eaf206d.html","nodes":[],"selectable":false,"tags":["\u003ca href\u003d\u0027##beforetable\u0027\u003e\u003ci class\u003d\u0027bi bi-slash-circle ignored-icon \u0027 title\u003d\u0027IGNORED\u0027\u003e\u003c/i\u003e\u003c/a\u003e","\u003cspan class\u003d\u0027feature-count\u0027\u003e5 scenarios\u003c/span\u003e"]}];
+
+            $('#tree').treeview({
+                data: requirementsTree,
+                enableLinks: true,
+                levels: 10,
+                showTags: true,
+                expandIcon: "bi bi-journal-plus",
+                collapseIcon: "bi bi-journal-minus",
+                emptyIcon: "bi bi-journal"
+            });
+
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $(".scenario-docs > div > p").html(function () {
+                var text = $(this).text().trim().split(" ");
+                var first = text.shift();
+                return (text.length > 0 ? "<strong>" + first + "</strong> " : first) + text.join(" ");
+            });
+        });
+    </script>
+</head>
+
+<body class="results-page">
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle"></span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+            <a href='index.html'>Home</a> > <a href="capabilities.html">Requirements</a>
+
+
+
+                    > <span class="truncate-40">Login, As A User I Want To Login,So That I Can Access Homepage</span>
+
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li >
+            <a href="index.html"><i class="bi bi-journal-check"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="bi bi-journal-text"></i> Requirements</a>
+        </li>
+        <li class="active">
+            <a href="#"><i class="bi bi-chat-text"></i> Features</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 09-06-2023 18:48</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+    <div id="beforetable"></div>
+    <div id="results-dashboard">
+        <div class="table">
+            <div class=row">
+                <div class="col-sm-12">
+                    <div>
+                        <div clas="table">
+                            <div class="row">
+                                    <div class="col-sm-12">
+                                        <span>
+                                            <h2><i class="bi bi-book"></i> Feature:  Login, As A User I Want To Login,So That I Can Access Homepage</h2>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="requirementNarrativeTitle">
+                                
+                            </div>
+
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-sm-12">
+
+                        <!-- Requirements result tabs -->
+                        <ul class="nav nav-tabs">
+                            <li class="active">
+                                <a data-toggle="tab" href="#specs"><i class="bi bi-journal-text"></i> Specifications</a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#results"><i class="bi bi-speedometer"></i> Test Results</a>
+                            </li>
+                        </ul>
+
+                        <!-- Specifications and Results tabs -->
+                        <div class="card border">
+                            <div class="tab-content" id="pills-tabContent">
+                                <div id="specs" class="tab-pane fade in active">
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+
+                                                    <!--- TOC --->
+                                                    <div id="toc">
+                                                        <h3>Overview</h3>
+                                                        <table class="table" id="toc-table">
+                                                                        <tr>
+                                                                            <td style="width:95%;" class="toc-title">
+                                                                                <span class="orphan-scenario-toc-entry">
+                                                                                    <a href="#77bbc8c9a77d5af872180a54f6b84812cb9d2360df2b35542689a755c234b13a"
+                                                                                       title="View scenario details">
+                                                                                        <i class="bi bi-chat-dots"></i> Scenario: As a user i want to login form my account
+                                                                                    </a>
+                                                                                </span>
+                                                                            </td>
+                                                                            <td style="width:5%;">
+                                                                                <table>
+                                                                                    <tr>
+                                                                                        <td class="icons-bar">
+                                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                               href="7ff1f5e8bc1f64bcb2de05d8c30f31a6e54ebd3b3447b335134167e25f897916.html"
+                                                                                               title="View test results">
+                                                                                                <a href='##beforetable'><i class='bi bi-slash-circle ignored-icon ' title='IGNORED'></i></a>
+                                                                                                </a>
+
+
+                                                                                                <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                                   href="7ff1f5e8bc1f64bcb2de05d8c30f31a6e54ebd3b3447b335134167e25f897916.html"
+                                                                                                   title="View test results">
+                                                                                                    <i class="bi bi-eyeglasses"></i>
+                                                                                                </a>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </table>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td style="width:95%;" class="toc-title">
+                                                                                <span class="orphan-scenario-toc-entry">
+                                                                                    <a href="#227e8a0502cc17d9484a3d4491f2d329b828441ca15c3bd271da60ceaa1bbc93"
+                                                                                       title="View scenario details">
+                                                                                        <i class="bi bi-chat-dots"></i> Scenario: As a user i want to login with wrong password
+                                                                                    </a>
+                                                                                </span>
+                                                                            </td>
+                                                                            <td style="width:5%;">
+                                                                                <table>
+                                                                                    <tr>
+                                                                                        <td class="icons-bar">
+                                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                               href="24ca5ab85ef1a165dfa548c971791a1e346e72df0e83427f014806df9aa74a5b.html"
+                                                                                               title="View test results">
+                                                                                                <a href='##beforetable'><i class='bi bi-slash-circle ignored-icon ' title='IGNORED'></i></a>
+                                                                                                </a>
+
+
+                                                                                                <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                                   href="24ca5ab85ef1a165dfa548c971791a1e346e72df0e83427f014806df9aa74a5b.html"
+                                                                                                   title="View test results">
+                                                                                                    <i class="bi bi-eyeglasses"></i>
+                                                                                                </a>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </table>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td style="width:95%;" class="toc-title">
+                                                                                <span class="orphan-scenario-toc-entry">
+                                                                                    <a href="#f906025622f7da8f3d20e6e1505701009f72d9bf40a9262f109561bb45226817"
+                                                                                       title="View scenario details">
+                                                                                        <i class="bi bi-chat-dots"></i> Scenario: As a user i want to login with wrong email
+                                                                                    </a>
+                                                                                </span>
+                                                                            </td>
+                                                                            <td style="width:5%;">
+                                                                                <table>
+                                                                                    <tr>
+                                                                                        <td class="icons-bar">
+                                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                               href="9aca56c53cb26c08c0ab025fe09f0bbb0c765b62e5bf48650a6f1ebd94d0640d.html"
+                                                                                               title="View test results">
+                                                                                                <a href='##beforetable'><i class='bi bi-slash-circle ignored-icon ' title='IGNORED'></i></a>
+                                                                                                </a>
+
+
+                                                                                                <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                                   href="9aca56c53cb26c08c0ab025fe09f0bbb0c765b62e5bf48650a6f1ebd94d0640d.html"
+                                                                                                   title="View test results">
+                                                                                                    <i class="bi bi-eyeglasses"></i>
+                                                                                                </a>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </table>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td style="width:95%;" class="toc-title">
+                                                                                <span class="orphan-scenario-toc-entry">
+                                                                                    <a href="#bb0c183baa5778ce5cb6284c50b3972b6c3ad17c7b2497abacfd5b2dc5cabb9c"
+                                                                                       title="View scenario details">
+                                                                                        <i class="bi bi-chat-dots"></i> Scenario: As a user i want to login with invalid email
+                                                                                    </a>
+                                                                                </span>
+                                                                            </td>
+                                                                            <td style="width:5%;">
+                                                                                <table>
+                                                                                    <tr>
+                                                                                        <td class="icons-bar">
+                                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                               href="3786c61720492a1d8b516cbc7ec34174cf6d708a029c8ceead33709dc63e354f.html"
+                                                                                               title="View test results">
+                                                                                                <a href='##beforetable'><i class='bi bi-slash-circle ignored-icon ' title='IGNORED'></i></a>
+                                                                                                </a>
+
+
+                                                                                                <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                                   href="3786c61720492a1d8b516cbc7ec34174cf6d708a029c8ceead33709dc63e354f.html"
+                                                                                                   title="View test results">
+                                                                                                    <i class="bi bi-eyeglasses"></i>
+                                                                                                </a>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </table>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td style="width:95%;" class="toc-title">
+                                                                                <span class="orphan-scenario-toc-entry">
+                                                                                    <a href="#89f0627f35d5a42c25e7bdde7d226a36678c6cef6445fb26bfe8b6d4e62f8e94"
+                                                                                       title="View scenario details">
+                                                                                        <i class="bi bi-chat-dots"></i> Scenario: As a user i want to login without input password
+                                                                                    </a>
+                                                                                </span>
+                                                                            </td>
+                                                                            <td style="width:5%;">
+                                                                                <table>
+                                                                                    <tr>
+                                                                                        <td class="icons-bar">
+                                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                               href="61e5987316990e57beef3fd5e889b5a94f2f414abc7a8a8a036aedceb859a357.html"
+                                                                                               title="View test results">
+                                                                                                <a href='##beforetable'><i class='bi bi-slash-circle ignored-icon ' title='IGNORED'></i></a>
+                                                                                                </a>
+
+
+                                                                                                <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                                   href="61e5987316990e57beef3fd5e889b5a94f2f414abc7a8a8a036aedceb859a357.html"
+                                                                                                   title="View test results">
+                                                                                                    <i class="bi bi-eyeglasses"></i>
+                                                                                                </a>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </table>
+                                                                            </td>
+                                                                        </tr>
+                                                        </table>
+                                                    </div>
+                                                    <!--- END OF TOC --->
+
+                                                    <h3>Scenarios</h3>
+
+                                                        <a name="5ac2d698-900f-4bd1-9255-6fe20726680e"></a>
+
+
+                                                            <div class="scenario-docs card" id="77bbc8c9a77d5af872180a54f6b84812cb9d2360df2b35542689a755c234b13a">
+                                                                <div class="scenario-docs card-header ignored"
+                                                                     style="min-height:1.5em;">
+                                                                    <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="7ff1f5e8bc1f64bcb2de05d8c30f31a6e54ebd3b3447b335134167e25f897916.html"
+                                                                   title="View test results">Scenario: As a user i want to login form my account</a>
+                                                            </span>
+                                                                        <span class="scenario-result-icon">
+                                                                
+
+                                                                                <a href='##beforetable'><i class='bi bi-slash-circle ignored-icon ' title='IGNORED'></i></a>
+                                                            </span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="scenario-docs card-body">
+                                                                        <p>Given I am on the product list</p>
+                                                                        <p>When I click button sign in</p>
+                                                                        <p>And I input correct email in login</p>
+                                                                        <p>And I input correct password in login</p>
+                                                                        <p>And I click button login</p>
+                                                                        <p>Then I get result the message</p>
+                                                                    <div class="examples">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="scenario-docs card" id="227e8a0502cc17d9484a3d4491f2d329b828441ca15c3bd271da60ceaa1bbc93">
+                                                                <div class="scenario-docs card-header ignored"
+                                                                     style="min-height:1.5em;">
+                                                                    <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="24ca5ab85ef1a165dfa548c971791a1e346e72df0e83427f014806df9aa74a5b.html"
+                                                                   title="View test results">Scenario: As a user i want to login with wrong password</a>
+                                                            </span>
+                                                                        <span class="scenario-result-icon">
+                                                                
+
+                                                                                <a href='##beforetable'><i class='bi bi-slash-circle ignored-icon ' title='IGNORED'></i></a>
+                                                            </span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="scenario-docs card-body">
+                                                                        <p>Given I am on the product list</p>
+                                                                        <p>When I click button sign in</p>
+                                                                        <p>And I input correct email in login</p>
+                                                                        <p>And I input incorrect password in login</p>
+                                                                        <p>And I click button login</p>
+                                                                        <p>Then I get result the error message</p>
+                                                                    <div class="examples">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="scenario-docs card" id="f906025622f7da8f3d20e6e1505701009f72d9bf40a9262f109561bb45226817">
+                                                                <div class="scenario-docs card-header ignored"
+                                                                     style="min-height:1.5em;">
+                                                                    <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="9aca56c53cb26c08c0ab025fe09f0bbb0c765b62e5bf48650a6f1ebd94d0640d.html"
+                                                                   title="View test results">Scenario: As a user i want to login with wrong email</a>
+                                                            </span>
+                                                                        <span class="scenario-result-icon">
+                                                                
+
+                                                                                <a href='##beforetable'><i class='bi bi-slash-circle ignored-icon ' title='IGNORED'></i></a>
+                                                            </span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="scenario-docs card-body">
+                                                                        <p>Given I am on the product list</p>
+                                                                        <p>When I click button sign in</p>
+                                                                        <p>And I input incorrect email in login</p>
+                                                                        <p>And I input correct password in login</p>
+                                                                        <p>And I click button login</p>
+                                                                        <p>Then I get result the error message</p>
+                                                                    <div class="examples">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="scenario-docs card" id="bb0c183baa5778ce5cb6284c50b3972b6c3ad17c7b2497abacfd5b2dc5cabb9c">
+                                                                <div class="scenario-docs card-header ignored"
+                                                                     style="min-height:1.5em;">
+                                                                    <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="3786c61720492a1d8b516cbc7ec34174cf6d708a029c8ceead33709dc63e354f.html"
+                                                                   title="View test results">Scenario: As a user i want to login with invalid email</a>
+                                                            </span>
+                                                                        <span class="scenario-result-icon">
+                                                                
+
+                                                                                <a href='##beforetable'><i class='bi bi-slash-circle ignored-icon ' title='IGNORED'></i></a>
+                                                            </span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="scenario-docs card-body">
+                                                                        <p>Given I am on the product list</p>
+                                                                        <p>When I click button sign in</p>
+                                                                        <p>And I input invalid email in login</p>
+                                                                        <p>And I input correct password in login</p>
+                                                                        <p>And I click button login</p>
+                                                                        <p>Then I get result the error message</p>
+                                                                    <div class="examples">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="scenario-docs card" id="89f0627f35d5a42c25e7bdde7d226a36678c6cef6445fb26bfe8b6d4e62f8e94">
+                                                                <div class="scenario-docs card-header ignored"
+                                                                     style="min-height:1.5em;">
+                                                                    <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="61e5987316990e57beef3fd5e889b5a94f2f414abc7a8a8a036aedceb859a357.html"
+                                                                   title="View test results">Scenario: As a user i want to login without input password</a>
+                                                            </span>
+                                                                        <span class="scenario-result-icon">
+                                                                
+
+                                                                                <a href='##beforetable'><i class='bi bi-slash-circle ignored-icon ' title='IGNORED'></i></a>
+                                                            </span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="scenario-docs card-body">
+                                                                        <p>Given I am on the product list</p>
+                                                                        <p>When I click button sign in</p>
+                                                                        <p>And I input correct email in login</p>
+                                                                        <p>And I input empty password in login</p>
+                                                                        <p>And I click button login</p>
+                                                                        <p>Then I get result the empty message</p>
+                                                                    <div class="examples">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="results" class="tab-pane fade">
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+
+                                                <div style="width:300px;" class="chart-container automated-and-manual-results">
+                                                    <div class="ct-chart ct-square"></div>
+                                                </div>
+                                                <script>
+
+                                                    var labels = [' ', ' ', ' ', ' ', '100%', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '];
+                                                    // Our series array that contains series objects or in this case series data arrays
+
+                                                    var series = [{meta: 'Passing tests (automated)', value: 0}, {meta: 'Passing tests (manual)', value: 0}, {meta: 'Pending tests (automated)', value: 0}, {meta: 'Pending tests (manual)', value: 0}, {meta: 'Ignored tests (automated)', value: 5}, {meta: 'Ignored tests (manual)', value: 0}, {meta: 'Skipped tests (automated)', value: 0}, {meta: 'Skipped tests (manual)', value: 0}, {meta: 'Aborted tests (automated)', value: 0}, {meta: 'Aborted tests (manual)', value: 0}, {meta: 'Failing tests (automated)', value: 0}, {meta: 'Failing tests (manual)', value: 0}, {meta: 'Broken tests (automated)', value: 0}, {meta: 'Broken tests (manual)', value: 0}, {meta: 'Compromised tests (automated)', value: 0}, {meta: 'Compromised tests (manual)', value: 0}];
+
+                                                    // As options we currently only set a static size of 300x200 px. We can also omit this and use aspect ratio containers
+                                                    // as you saw in the previous example
+                                                    var options = {
+                                                        width: 350,
+                                                        height: 300
+                                                    };
+
+                                                    $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+                                                        new Chartist.Pie('.ct-chart', {
+                                                            series: series,
+                                                            labels: labels,
+                                                        }, {
+                                                            donut: true,
+                                                            donutWidth: 60,
+                                                            donutSolid: true,
+                                                            startAngle: 270,
+                                                            showLabel: true
+                                                        }, options);
+                                                    });
+
+                                                </script>
+                                            </div>
+                                            <div class="col-sm-8">
+
+                                                    <table class="table">
+                                                        <thead>
+                                                        <tr>
+                                                            <th scope="col">Scenario Results (including rows of test
+                                                                data)
+                                                            </th>
+                                                            <th scope="col" colspan="2" class="automated-stats">
+                                                                Automated
+                                                            </th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        <tr>
+                                                                <td class="aggregate-result-count"><i
+                                                                            class='bi bi-check-circle-fill success-icon'></i>&nbsp;Passing
+                                                                </td>
+                                                            <td class="automated-stats">0</td>
+                                                            <td class="automated-stats"> </td>
+                                                        </tr>
+                                                        <tr>
+                                                                <td class="aggregate-result-count"><i
+                                                                            class='bi bi-hourglass-top pending-icon'></i>&nbsp;Pending
+                                                                </td>
+                                                            <td class="automated-stats">0</td>
+                                                            <td class="automated-stats"> </td>
+                                                        </tr>
+                                                        <tr>
+                                                                <td class="aggregate-result-count">
+                                                                    <a href="994f97f70e37d9d6dafbe0c09816a6bff79f35fa9ae9516a5564d7ce11c119d6.html"><i
+                                                                                class='bi bi-slash-circle ignored-icon'></i>&nbsp;Ignored</a>
+                                                                </td>
+                                                            <td class="automated-stats">5</td>
+                                                            <td class="automated-stats">100%</td>
+                                                        </tr>
+                                                        <tr>
+                                                                <td class="aggregate-result-count"><i
+                                                                            class='bi bi-skip-forward skip-icon'></i>&nbsp;Skipped
+                                                                </td>
+                                                            <td class="automated-stats">0</td>
+                                                            <td class="automated-stats"> </td>
+                                                        </tr>
+                                                        <tr>
+                                                                <td class="aggregate-result-count"><i
+                                                                            class='bi bi-exclamation-octagon-fill aborted-icon'></i>&nbsp;Aborted
+                                                                </td>
+                                                            <td class="automated-stats">0</td>
+                                                            <td class="automated-stats"> </td>
+                                                        </tr>
+                                                        <tr>
+                                                                    <td colspan="3"><i
+                                                                                class='bi bi-x-circle failure-icon'></i>&nbsp;<em>Unsuccessful</em></a>
+                                                                    </td>
+
+                                                        </tr>
+
+                                                        <tr>
+                                                                <td class="aggregate-result-count indented-error-category">
+                                                                    <i
+                                                                            class='bi bi-x-circle-fill failure-icon'></i>&nbsp;Failed
+                                                                </td>
+                                                            <td class="automated-stats">0</td>
+                                                            <td class="automated-stats"> </td>
+                                                        <tr>
+                                                                <td class="aggregate-result-count indented-error-category">
+                                                                    <i
+                                                                            class='bi bi-exclamation-triangle-fill error-icon'></i>&nbsp;Broken
+                                                                </td>
+                                                            <td class="automated-stats">0</td>
+                                                            <td class="automated-stats"> </td>
+                                                        <tr>
+                                                                <td class="aggregate-result-count indented-error-category">
+                                                                    <i
+                                                                            class='bi bi-slash-circle-fill compromised-icon'></i>&nbsp;Compromised
+                                                                </td>
+                                                            <td class="automated-stats">0</td>
+                                                            <td class="automated-stats"> </td>
+                                                        </tr>
+                                                        <tr class="summary-stats">
+                                                            <td class="aggregate-result-count">Total</td>
+                                                            <td class="automated-stats">5</td>
+                                                            <td class="automated-stats"></td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <table class="table">
+                                                        <thead>
+                                                        <tr>
+                                                            <th>Tests Started</th>
+                                                            <th>Tests Finished</th>
+                                                            <th>Total Duration</th>
+                                                            <th>Fastest Test</th>
+                                                            <th>Slowest Test</th>
+                                                            <th>Average Execution Time</th>
+                                                            <th>Total Execution Time</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        <tr>
+                                                            <td>09-06-2023 18:48:30 +0700</td>
+                                                            <td>09-06-2023 18:48:41 +0700</td>
+                                                            <td>11s</td>
+                                                            <td>2s</td>
+                                                            <td>3s</td>
+                                                            <td>2s</td>
+                                                            <td>11s</td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <h3><i class="bi bi-gear"></i> Automated Tests</h3>
+
+                                                        <table class="scenario-result-table table"
+                                                               id="scenario-results">
+                                                            <thead>
+                                                            <tr>
+                                                                <th class="test-name-column">Scenario</th>
+                                                                <th>Steps</th>
+                                                                <th>Started</th>
+                                                                <th>Duration</th>
+                                                                <th>Result</th>
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr class="scenario-result IGNORED">
+                                                                    <td>
+                                                                            <a href="7ff1f5e8bc1f64bcb2de05d8c30f31a6e54ebd3b3447b335134167e25f897916.html">As a user i want to login form my account</a>
+                                                                    </td>
+                                                                    <td>6</td>
+                                                                    <td>18:48:30</td>
+                                                                    <td>3s 034ms</td>
+                                                                    <td>
+                                                                            <a href='##beforetable'><i class='bi bi-slash-circle ignored-icon ' title='IGNORED'></i></a> <span
+                                                                                style="display:none">IGNORED</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="scenario-result IGNORED">
+                                                                    <td>
+                                                                            <a href="24ca5ab85ef1a165dfa548c971791a1e346e72df0e83427f014806df9aa74a5b.html">As a user i want to login with wrong password</a>
+                                                                    </td>
+                                                                    <td>6</td>
+                                                                    <td>18:48:33</td>
+                                                                    <td>2s 096ms</td>
+                                                                    <td>
+                                                                            <a href='##beforetable'><i class='bi bi-slash-circle ignored-icon ' title='IGNORED'></i></a> <span
+                                                                                style="display:none">IGNORED</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="scenario-result IGNORED">
+                                                                    <td>
+                                                                            <a href="9aca56c53cb26c08c0ab025fe09f0bbb0c765b62e5bf48650a6f1ebd94d0640d.html">As a user i want to login with wrong email</a>
+                                                                    </td>
+                                                                    <td>6</td>
+                                                                    <td>18:48:35</td>
+                                                                    <td>2s 103ms</td>
+                                                                    <td>
+                                                                            <a href='##beforetable'><i class='bi bi-slash-circle ignored-icon ' title='IGNORED'></i></a> <span
+                                                                                style="display:none">IGNORED</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="scenario-result IGNORED">
+                                                                    <td>
+                                                                            <a href="3786c61720492a1d8b516cbc7ec34174cf6d708a029c8ceead33709dc63e354f.html">As a user i want to login with invalid email</a>
+                                                                    </td>
+                                                                    <td>6</td>
+                                                                    <td>18:48:37</td>
+                                                                    <td>2s 096ms</td>
+                                                                    <td>
+                                                                            <a href='##beforetable'><i class='bi bi-slash-circle ignored-icon ' title='IGNORED'></i></a> <span
+                                                                                style="display:none">IGNORED</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="scenario-result IGNORED">
+                                                                    <td>
+                                                                            <a href="61e5987316990e57beef3fd5e889b5a94f2f414abc7a8a8a036aedceb859a357.html">As a user i want to login without input password</a>
+                                                                    </td>
+                                                                    <td>6</td>
+                                                                    <td>18:48:39</td>
+                                                                    <td>2s 099ms</td>
+                                                                    <td>
+                                                                            <a href='##beforetable'><i class='bi bi-slash-circle ignored-icon ' title='IGNORED'></i></a> <span
+                                                                                style="display:none">IGNORED</span>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <h3><i class="bi bi-hand-index-thumb"></i> Manual Tests</h3>
+
+                                                        No manual tests were recorded
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <span class="version">Serenity BDD version 3.0.5</span>
+                    </div>
+                </div>
+            </div>
+</body>
+</html>

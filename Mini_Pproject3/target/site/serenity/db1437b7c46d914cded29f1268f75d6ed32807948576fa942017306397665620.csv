@@ -1,0 +1,6 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Login, As a user I want to login,So that i can access homepage","As a user i want to login form my account","IGNORED","2023-06-09T18:48:30.3374639+07:00[Asia/Jakarta]","0.0","3.03"
+"Login, As a user I want to login,So that i can access homepage","As a user i want to login with wrong password","IGNORED","2023-06-09T18:48:33.3888468+07:00[Asia/Jakarta]","0.0","2.1"
+"Login, As a user I want to login,So that i can access homepage","As a user i want to login with wrong email","IGNORED","2023-06-09T18:48:35.5046694+07:00[Asia/Jakarta]","0.0","2.1"
+"Login, As a user I want to login,So that i can access homepage","As a user i want to login with invalid email","IGNORED","2023-06-09T18:48:37.6193462+07:00[Asia/Jakarta]","0.0","2.1"
+"Login, As a user I want to login,So that i can access homepage","As a user i want to login without input password","IGNORED","2023-06-09T18:48:39.7277654+07:00[Asia/Jakarta]","0.0","2.1"
